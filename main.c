@@ -4,6 +4,6 @@
 
 int main(void)
 {
-	_printf("%c", 'c');
+	_printf("Put a char here: =>%c", 'c');
 	return (0);
 }

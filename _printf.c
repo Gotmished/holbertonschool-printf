@@ -7,10 +7,15 @@ char *print_char(char *format, va_list *arg)
 {
 	char *chr;
 
-	chr = malloc(sizeof(*chr) + 1);
-	*chr = va_arg(*arg, int);
+	chr = malloc(sizeof(*chr) * _strlen(format) + 1);
+	if (chr == NULL)
+	{
+		return (NULL);
+	}
+	
 	printf("Print_char format: %s\n", format);
 	printf("Print Char arg: %s\n", chr);
+	*format = va_arg(*arg, int);
 	return (format);
 }
 
