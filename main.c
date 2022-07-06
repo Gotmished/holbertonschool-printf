@@ -4,8 +4,6 @@
 
 int main(void)
 {
-	int len;
-	len =_printf("%c", 'c');
-	printf("%d", len);
+	_printf("%c", 'c');
 	return (0);
 }
