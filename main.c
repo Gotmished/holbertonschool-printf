@@ -4,8 +4,6 @@
 
 int main(void)
 {
-	int len;
-	len =_printf("%c", 'c');
-	printf("%d", len);
+	_printf("Put a char here: =>%c", 'c');
 	return (0);
 }

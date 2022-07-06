@@ -5,7 +5,9 @@ typedef struct func_sel{
 	char *c;
 	char *(*func)(char *, va_list *);
 } s_func;
+int _putchar(char c);
 int _strlen(const char *s);
 char *_strdup(const char *str);
+void _puts(const char *str);
 int _printf(const char *format, ...);
 #endif /* _MAIN_H_ */
