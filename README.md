@@ -1,1 +1,1 @@
-Readme for printf group project, starring Luke Hackett & Hamish Ross
+<h1>C - printf</h1>

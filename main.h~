@@ -3,7 +3,7 @@
 #include <stdarg.h>
 typedef struct func_sel{
 	char *c;
-	char *(*func)(char *, va_list *);
+	char *(*func)(const char *, va_list *);
 } s_func;
 int _strlen(const char *s);
 char *_strdup(const char *str);
