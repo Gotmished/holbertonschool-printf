@@ -32,7 +32,7 @@ int _printf(const char *format, ...)
 {
 	va_list ap;
 	char * strcopy;
-	int i = 0, count = 0;
+	int i = 0, count = 0, len;
 
 	s_func print_sel[] = {
 		{"c", print_char},
@@ -41,6 +41,7 @@ int _printf(const char *format, ...)
 	};
 
 	strcopy = _strdup(format);
+	len = _strlen(strcopy);
 	va_start(ap, format);
 
 	while (strcopy != NULL && (*(strcopy + i) != '\0'))
@@ -55,5 +56,5 @@ int _printf(const char *format, ...)
 			}
 		i++;
 	}
-	return (0);
+	return (len);
 }

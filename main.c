@@ -5,7 +5,7 @@
 int main(void)
 {
 	int len;
-	len =_printf("%c", "string");
+	len =_printf("%c", 'c');
 	printf("%d", len);
 	return (0);
 }
