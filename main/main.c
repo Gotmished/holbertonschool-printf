@@ -4,8 +4,8 @@
 
 int main(void)
 {
-	printf("Put a char here: =>%c", 'c');
-	_printf("Put a char here: =>%c", 'c');
+	printf("stdio: Put a char here: =>%c\n", 'c');
+	_printf("Ours:Put a char here: =>%c\n", 'c');
 	printf("Unknown: [%%]");
 	_printf("Unknown: [%%]");
 	return (0);
