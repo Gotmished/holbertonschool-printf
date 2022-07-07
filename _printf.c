@@ -16,8 +16,8 @@ char *print_char(char *format, va_list *arg)
 	printf("Print_char format: %s\n", format);
 	printf("Print Char arg: %s\n", chr);
 	*format = va_arg(*arg, int);
-
 	format = format + 1;
+	printf("Print_char format after assign: %s\n", format);
 	return (format);
 }
 
@@ -75,7 +75,6 @@ int _printf(const char *format, ...)
 	{
 		if (*(strcopy + i) == '%')
 		{
-			printf("%d", len);
 			print_sel(strcopy + i, &ap);
 		}
 		i++;
