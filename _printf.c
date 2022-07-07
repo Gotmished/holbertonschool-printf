@@ -7,22 +7,31 @@
 
 char *print_string(char *format, va_list *arg)
 {
-	char *str;
-	int len1, len2;
+	char *str_copy, *str_arg;
+	int len1, arg_len;
 
 	len1 = _strlen(format);
-	len2 = _strlen(va_arg(*arg, char*));
+	str_arg = va_arg(*arg, char*);
 
-	str = malloc(sizeof(*str) * len1 + sizeof(*str) * len2 + 1);
-	if (str == NULL || va_arg(*arg, char*) == NULL)
+	if (str_arg == NULL || *str_arg == '\0')
 	{
 		return (NULL);
 	}
-	str = va_arg(*arg, char*);
-	if (!str)
+
+	arg_len = _strlen(str_arg);
+
+	str_copy = malloc(sizeof(*str_copy) * (len1 + 1));
+
+	if (str_copy == NULL)
 	{
 		return (NULL);
 	}
+
+	_strcpy(str_copy, format);
+	_strcpy(format, str_arg);
+
+
+	format = format + arg_len;
 	return (format);
 }
 
