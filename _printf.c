@@ -69,7 +69,6 @@ int _printf(const char *format, ...)
 	int i = 0, len;
 
 	strcopy = _strdup(format);
-	len = _strlen(strcopy);
 	va_start(ap, format);
 
 	while (strcopy != NULL && (*(strcopy + i) != '\0'))
@@ -81,7 +80,7 @@ int _printf(const char *format, ...)
 		}
 		i++;
 	}
+	len = _strlen(strcopy);
 	_puts(strcopy);
-	_putchar('\n');
 	return (len);
 }
