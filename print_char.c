@@ -17,6 +17,11 @@ char *print_char(char *format, va_list *arg)
 	{
 		return (NULL);
 	}
+	if (format == NULL)
+	{
+		return (-1);
+	}
+
 	/* Copy the format into a string */
 	_strcpy(chr, format);
 	/* change value of the & */
