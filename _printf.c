@@ -12,10 +12,12 @@ char *print_char(char *format, va_list *arg)
 	{
 		return (NULL);
 	}
-	
+	_strcpy(chr, format);
 	printf("Print_char format: %s\n", format);
 	printf("Print Char arg: %s\n", chr);
 	*format = va_arg(*arg, int);
+
+	format = format + 1;
 	return (format);
 }
 
