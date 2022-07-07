@@ -54,7 +54,6 @@ char *print_sel(char *format, va_list *arg)
 		{
 			return (print_sel[i].func(format, arg));
 		}
-		printf("i: %d\n", i);
 		i++;
 	}
 	return (NULL);
