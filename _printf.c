@@ -12,12 +12,15 @@ char *print_char(char *format, va_list *arg)
 	{
 		return (NULL);
 	}
+	/* Copy the format into a string */
 	_strcpy(chr, format);
-	printf("Print_char format: %s\n", format);
-	printf("Print Char arg: %s\n", chr);
+	/* change value of the & */
 	*format = va_arg(*arg, int);
+	/* change value of the address of format */
 	format = format + 1;
-	printf("Print_char format after assign: %s\n", format);
+	/* check to see if it is the of the str */
+	if (_strlen(chr) > 2)
+		_strcpy(format, chr + 2);
 	return (format);
 }
 
