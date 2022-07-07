@@ -8,7 +8,16 @@
 char *print_string(char *format, va_list *arg)
 {
 	char *str;
+	int len1, len2;
 
+	len1 = _strlen(format);
+	len2 = _strlen(va_arg(*arg, char*));
+
+	str = malloc(sizeof(*str) * len1 + sizeof(*str) * len2 + 1);
+	if (str == NULL || va_arg(*arg, char*) == NULL)
+	{
+		return (NULL);
+	}
 	str = va_arg(*arg, char*);
 	if (!str)
 	{
