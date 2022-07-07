@@ -1,5 +1,7 @@
 #include <stdio.h>
 #include <stdarg.h>
+#include <stdlib.h>
+#include "main.h"
 
 /**
  * print_char - replaces a %c with the arg passed
