@@ -10,4 +10,5 @@ int _strlen(const char *s);
 char *_strdup(const char *str);
 void _puts(const char *str);
 int _printf(const char *format, ...);
+char *_strcpy(char *dest, char *src);
 #endif /* _MAIN_H_ */
