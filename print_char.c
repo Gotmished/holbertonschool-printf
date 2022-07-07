@@ -12,7 +12,7 @@
 
 char *print_char(char *format, va_list *arg)
 {
-	char *chr, a;
+	char *chr;
 
 	chr = malloc(sizeof(*chr) * (_strlen(format) + 1));
 	if (chr == NULL)
@@ -26,7 +26,7 @@ char *print_char(char *format, va_list *arg)
 	*format = va_arg(*arg, int);
 	if (*format == '\0')
 	{
-		*format = "";
+		*format = '\0';
 	}
 	*(format + 1) = *format;
 	/* change value of the address of format */
