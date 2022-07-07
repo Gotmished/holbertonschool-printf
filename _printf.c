@@ -7,7 +7,7 @@ char *print_char(char *format, va_list *arg)
 {
 	char *chr;
 
-	chr = malloc(sizeof(*chr) * _strlen(format) + 1);
+	chr = malloc(sizeof(*chr) * (_strlen(format) + 1));
 	if (chr == NULL)
 	{
 		return (NULL);
@@ -16,11 +16,13 @@ char *print_char(char *format, va_list *arg)
 	_strcpy(chr, format);
 	/* change value of the & */
 	*format = va_arg(*arg, int);
+	*(format + 1) = *format;
 	/* change value of the address of format */
 	format = format + 1;
-	/* check to see if it is the of the str */
-	if (_strlen(chr) > 2)
+        /* check to see if it is the of the str */
+	if (_strlen(chr) > 1)
 		_strcpy(format, chr + 2);
+	free(chr);
 	return (format);
 }
 
