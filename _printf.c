@@ -3,8 +3,6 @@
 #include <stdarg.h>
 #include <stdio.h>
 
-
-
 char *print_string(char *format, va_list *arg)
 {
 	char *str_copy, *str_arg;
@@ -13,7 +11,7 @@ char *print_string(char *format, va_list *arg)
 	len1 = _strlen(format);
 	str_arg = va_arg(*arg, char*);
 
-	if (str_arg == NULL || *str_arg == '\0')
+	if (str_arg == NULL)
 	{
 		return (NULL);
 	}
@@ -29,9 +27,11 @@ char *print_string(char *format, va_list *arg)
 
 	_strcpy(str_copy, format);
 	_strcpy(format, str_arg);
-
-
 	format = format + arg_len;
+	if (_strlen(str_copy) > 2)
+	{
+		_strcpy(format, str_copy + 2);
+	}
 	return (format);
 }
 
