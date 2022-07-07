@@ -1,15 +1,19 @@
 #ifndef _MAIN_H_
 #define _MAIN_H_
 #include <stdarg.h>
-typedef struct func_sel{
-	char *c;
-	char *(*func)(char *, va_list *);
-} s_func;
-int _putchar(char c);
-int _strlen(const char *s);
-char *_strdup(const char *str);
-void _puts(const char *str);
+
+/**
+ * struct print - matches variable type to appropriate print function
+ * @t: var type
+ * @f: print function
+ */
+typedef struct print
+{
+	char *t;
+	int (*f)(va_list list);
+} vars_t;
+
 int _printf(const char *format, ...);
-char *_strcpy(char *dest, char *src);
-char *print_char(char *format, va_list *arg);
-#endif /* _MAIN_H_ */
+int _putchar(char c);
+
+#endif /* HOLBERTON_H */
