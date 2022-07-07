@@ -12,22 +12,22 @@
 
 char *print_char(char *format, va_list *arg)
 {
-	char *chr;
+	char *chr, a;
 
 	chr = malloc(sizeof(*chr) * (_strlen(format) + 1));
 	if (chr == NULL)
 	{
 		return (NULL);
 	}
-	if (format == NULL)
-	{
-		return (-1);
-	}
 
 	/* Copy the format into a string */
 	_strcpy(chr, format);
 	/* change value of the & */
 	*format = va_arg(*arg, int);
+	if (*format == '\0')
+	{
+		*format = "";
+	}
 	*(format + 1) = *format;
 	/* change value of the address of format */
 	format = format + 1;

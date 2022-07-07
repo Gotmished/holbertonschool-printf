@@ -82,5 +82,9 @@ int _printf(const char *format, ...)
 	}
 	len = _strlen(strcopy);
 	_puts(strcopy);
+	if (format == NULL)
+	{
+		return (-1);
+	}
 	return (len);
 }
