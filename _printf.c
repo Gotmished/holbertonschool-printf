@@ -33,7 +33,8 @@ int print_type(const char *format, va_list list)
 	}
 	if (str == '\0')
 	{
-		_putchar('\0');
+		_putchar(0);
+		return (0);
 	}
 	j = 0;
 	while (v[j].t != NULL)
