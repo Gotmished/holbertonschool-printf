@@ -2,21 +2,20 @@
 #include <stdlib.h>
 #include <stdarg.h>
 #include "main.h"
+
 /**
- * print_number - prints out a number just using putchar
+ * print_d - prints out a number just using putchar
  * @n: int being passed through
- *Return: void
+ * Return: void
  */
 
 int print_d(int n)
 {
-	long m; /* power of 10 */
-	int c; /* boolean check */
-	long num; /* convert int to long */
-	int count = 0;
+	long m, num;
+	int c, count = 0;
 
 	num = n;
-	/* negatives */
+
 	if (num < 0)
 	{
 		num = -(num);
@@ -24,7 +23,6 @@ int print_d(int n)
 		count++;
 	}
 
-	/* count up */
 	m = 1;
 	c = 1;
 	while (c)
@@ -35,7 +33,6 @@ int print_d(int n)
 			c = 0;
 	}
 
-	/* count down */
 	while (num >= 0)
 	{
 		if (m == 1)

@@ -3,9 +3,9 @@
 #include "main.h"
 
 /**
- *main -
- *
- *Return:
+ * conv_d - turn arg from va list into int
+ * @list: arg from va_list
+ * Return: int
  */
 
 int conv_d(va_list list)

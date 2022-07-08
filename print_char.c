@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "main.h"
 /**
- * func_string - print a string
+ * print_c - print a char
  * @list: the list of arguments the function _printf is receiving
  * Return: the number of characteres of the string
  */

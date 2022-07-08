@@ -3,6 +3,14 @@
 #include <stdarg.h>
 #include <stdio.h>
 
+/**
+ * print_type - select the correct function depending on
+ * char after %
+ * @format: pointer to char in string passed
+ * @list: pointer to list item
+ * Return: int
+ */
+
 int print_type(const char *format, va_list list)
 {
 	unsigned int j = 0, count = 0, match;
@@ -47,6 +55,7 @@ int print_type(const char *format, va_list list)
 /**
  * _printf - prints anything, followed by a new line
  * @format: a list of types of arguments passed to the function
+ * Return: int
  */
 
 int _printf(const char *format, ...)
