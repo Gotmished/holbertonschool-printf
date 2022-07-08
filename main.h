@@ -18,4 +18,5 @@ int _putchar(char c);
 int print_c(va_list list);
 int _strlen(char *s);
 char *_strcpy(char *dest, char *src);
+int print_s(va_list list);
 #endif /* HOLBERTON_H */
