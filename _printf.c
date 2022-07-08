@@ -21,6 +21,8 @@ int print_type(const char *format, va_list list)
 		count = count + 1;
 		return (count);
 	}
+	if (str == '\0')
+		return (0);
 	j = 0;
 	while (v[j].t != NULL)
 	{
