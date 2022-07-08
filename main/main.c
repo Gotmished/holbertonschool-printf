@@ -12,8 +12,8 @@ int main(void)
 {
 	int len, len2;
 
-	len = _printf("Should print a single percent sign: %%\n");
-	len2 = printf("Should print a single percent sign: %%\n");
+	len = _printf("%!\n");
+	len2 = printf("%!\n");
 	fflush(stdout);
 	if (len != len2)
 	{
