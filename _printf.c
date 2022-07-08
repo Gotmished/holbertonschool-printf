@@ -3,27 +3,43 @@
 #include <stdarg.h>
 #include <stdio.h>
 
-int print_s(va_list list)
+int print_type(const char *format, va_list list)
 {
-	int count;
-	char *a;
+	unsigned int j = 0, count = 0, match;
+	char str;
 
-	a = va_arg(list, char *);
-	if (a == NULL)
-	{
-		return (0);
-	}
-/*	printf("string to print: %s\n", va_arg(list, char *)); */
+	vars_t v[] = {
+		{"c", print_c},
+		{"s", print_s},
+		{NULL, NULL}
+	};
+	str = *(format + 1);
 
-	count = 0;
-	while (a[count] != '\0')
+	if (str == '%')
 	{
-		_putchar(a[count]);
+		_putchar('%');
 		count = count + 1;
+		return (count);
 	}
-
+	j = 0;
+	while (v[j].t != NULL)
+	{
+		if (*(v[j].t) == str)
+		{
+			match = v[j].f(list);
+			return (match);
+		}
+		j = j + 1;
+	}
+	if (v[j].t == NULL)
+	{
+		_putchar('%');
+		_putchar(str);
+		count = count + 2;
+	}
 	return (count);
 }
+
 /**
  * _printf - prints anything, followed by a new line
  * @format: a list of types of arguments passed to the function
@@ -32,13 +48,8 @@ int print_s(va_list list)
 int _printf(const char *format, ...)
 {
 	va_list list;
-	unsigned int i, j, len, match;
+	unsigned int i, len, match;
 
-	vars_t v[] = {
-		{"c", print_c},
-		{"s", print_s},
-		{NULL, NULL}
-	};
 
 	va_start(list, format);
 	if (format == NULL)
@@ -55,26 +66,11 @@ int _printf(const char *format, ...)
 			_putchar(format[i]);
 			len = len + 1;
 		}
-		else if (format[i] == '%' && format[i + 1] == '%')
-		{
-			_putchar('%');
-			len = len + 1;
-			i++;
-		}
 		else
 		{
-			j = 0;
-			while (v[j].t != NULL)
-			{
-				if (*(v[j].t) == format[i + 1])
-				{
-					match = v[j].f(list);
-					len = len + match;
-					i = i + 1;
-					break;
-				}
-				j = j + 1;
-			}
+			match = print_type(format + i, list);
+			i = i + 1;
+			len = len + match;
 		}
 		i = i + 1;
 	}
