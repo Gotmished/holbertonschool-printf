@@ -16,7 +16,7 @@ int print_s(va_list list)
 	a = va_arg(list, char *);
 	if (a == NULL)
 	{
-		return (0);
+		a = "(null)";
 	}
 /*	printf("string to print: %s\n", va_arg(list, char *)); */
 
