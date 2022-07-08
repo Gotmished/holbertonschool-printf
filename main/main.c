@@ -2,7 +2,6 @@
 #include <stdlib.h>
 #include "../main.h"
 
-
 /**
  * main - Entry point
  *
@@ -12,8 +11,8 @@ int main(void)
 {
 	int len, len2;
 
-	len = _printf("%d", -1024);
-	len2 = printf("%d", -1024);
+	len = _printf("%");
+	len2 = printf("%");
 	fflush(stdout);
 	if (len != len2)
 	{
