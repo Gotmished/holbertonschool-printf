@@ -32,7 +32,7 @@ int print_type(const char *format, va_list list)
 		return (count);
 	}
 	if (str == '\0')
-		return (0);
+		return (1);
 	j = 0;
 	while (v[j].t != NULL)
 	{
