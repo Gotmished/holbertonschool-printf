@@ -12,8 +12,8 @@ int main(void)
 {
 	int len, len2;
 
-	len = _printf("Print this number: %d\n", 1);
-	len2 = printf("Print this number: %d\n", 1);
+	len = _printf("Print this number: %d\n", 1024);
+	len2 = printf("Print this number: %d\n", 1024);
 	fflush(stdout);
 	if (len != len2)
 	{

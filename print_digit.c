@@ -10,22 +10,45 @@
 
 int print_d(long int n)
 {
-	if (!n)
+	long m; /* power of 10 */
+	int c; /* boolean check */
+	long num; /* convert int to long */
+	int count = 0;
+
+	num = n;
+	/* negatives */
+	if (num < 0)
 	{
-		return (0);
-	}
-	
-	if (n < 0)
-	{
+		num *= -1;
 		_putchar('-');
-		n = n * -1;
 	}
 
-	if (n / 10)
+	/* count up */
+	m = 1;
+	c = 1;
+	while (c)
 	{
-		return (1 + print_d(n / 10));
+		if (num / (m * 10) > 0)
+			m *= 10;
+		else
+			c = 0;
 	}
 
-	_putchar((n % 10) + '0');
-	return (1);
+	/* count down */
+	while (num >= 0)
+	{
+		if (m == 1)
+		{
+			_putchar(num % 10 + '0');
+			num = -1;
+			count++;
+		}
+		else
+		{
+			_putchar((num / m % 10) + '0');
+			m /= 10;
+			count++;
+		}
+	}
+	return (count);
 }
