@@ -10,7 +10,7 @@
 
 int conv_d(va_list list)
 {
-	long int n;
+	int n;
 	int count;
 
 	n = va_arg(list, long int);
