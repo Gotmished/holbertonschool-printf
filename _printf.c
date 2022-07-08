@@ -59,6 +59,7 @@ int _printf(const char *format, ...)
 		{
 			_putchar('%');
 			len = len + 1;
+			i++;
 		}
 		else
 		{
