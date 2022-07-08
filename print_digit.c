@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <stdarg.h>
 #include "main.h"
 /**
  * print_number - prints out a number just using putchar
@@ -6,8 +8,13 @@
  *Return: void
  */
 
-void print_number(int n)
+int print_d(long int n)
 {
+	if (!n)
+	{
+		return (0);
+	}
+	
 	if (n < 0)
 	{
 		_putchar('-');
@@ -15,7 +22,10 @@ void print_number(int n)
 	}
 
 	if (n / 10)
-		print_number(n / 10);
+	{
+		return (1 + print_d(n / 10));
+	}
 
 	_putchar((n % 10) + '0');
+	return (1);
 }
