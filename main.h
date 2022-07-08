@@ -16,4 +16,6 @@ typedef struct print
 int _printf(const char *format, ...);
 int _putchar(char c);
 int print_c(va_list list);
+int _strlen(char *s);
+char *_strcpy(char *dest, char *src);
 #endif /* HOLBERTON_H */
