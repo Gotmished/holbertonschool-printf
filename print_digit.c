@@ -13,7 +13,7 @@ int print_d(int n)
 	long m; /* power of 10 */
 	int c; /* boolean check */
 	long num; /* convert int to long */
-	int count = 1;
+	int count = 0;
 
 	num = n;
 	/* negatives */
@@ -21,6 +21,7 @@ int print_d(int n)
 	{
 		num = -(num);
 		_putchar('-');
+		count++;
 	}
 
 	/* count up */
