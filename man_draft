@@ -44,6 +44,7 @@ The conversion to be applied to an argument is specified by the following charac
 .BR %
 
 .SH RETURN VALUE
+Upon successful return, this function returns the number of characters printed (excluding the null byte used to end output strings). If an output error is encountered, a negative value is returned.
 
 .SH KNOWN BUGS
 None
@@ -53,14 +54,14 @@ None
 #include "main.h"
 
 .IP
-_printf("String one: %s & string two: %s\n", "string one", "string two");
+_printf("String one: %s & string two: %s\\n", "string one", "string two");
 
 .SS To print a character and a decimal number:
 .IP
 #include "main.h"
 
 .IP
-_printf("Character: %c & digits: %d\n", 'H', 78001);
+_printf("Character: %c & digits: %d\\n", 'H', 78001);
 
 .SH SEE ALSO
 .I printf(3)
