@@ -1,0 +1,68 @@
+.\" Manpage for _printf
+.TH man 3 "10 July 2022" "1.0.0" "_printf man page"
+.SH NAME
+.B _printf
+- formatted output conversion
+.SH SYNOPSIS
+#include "main.h"
+
+.B int _printf(const char *
+.I format
+.B , ...);
+.SH DESCRIPTION
+.B _printf()
+Prints arguments to standard output according to a
+.I format
+string specifying how the arguments are converted.
+
+.SS Format of the format string
+A string of characters. Each conversion specification is introduced by the
+.B %
+character, followed by a single-character
+.I conversion specifier.
+Arguments must correspond to the conversion specifier supplied, and if more than one argument is given, each is used in the order listed by default.
+
+An example of the command including single argument is as follows:
+.IP
+_printf(This is the %ctring to print, 's')
+
+.SS Conversion specifiers
+The conversion to be applied to an argument is specified by the following characters:
+.TP
+.BR c
+
+.TP
+.BR s
+
+.TP
+.BR d
+
+.TP
+.BR i
+
+.TP
+.BR %
+
+.SH RETURN VALUE
+
+.SH KNOWN BUGS
+None
+.SH EXAMPLES
+.SS To print two strings:
+.IP
+#include "main.h"
+
+.IP
+_printf("String one: %s & string two: %s\n", "string one", "string two");
+
+.SS To print a character and a decimal number:
+.IP
+#include "main.h"
+
+.IP
+_printf("Character: %c & digits: %d\n", 'H', 78001);
+
+.SH SEE ALSO
+.I printf(3)
+.SH AUTHORS
+Luke Hackett & Hamish Ross
