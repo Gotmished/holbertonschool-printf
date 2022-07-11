@@ -24,7 +24,7 @@ Arguments must correspond to the conversion specifier supplied, and if more than
 
 An example of the command including single argument for a character is as follows:
 .IP
-_printf(This is the %ctring to print, 's')
+_printf("This is the %ctring to print\\n", 's')
 
 .SS Conversion specifiers
 The conversion to be applied to an argument is specified by the following characters:
@@ -54,14 +54,14 @@ None
 #include "main.h"
 
 .IP
-_printf("String one: %s & string two: %s\\n", "string one", "string two");
+_printf("String one: %s & String two: %s\\n", "Hello", "World");
 
 .SS To print a character and a decimal number:
 .IP
 #include "main.h"
 
 .IP
-_printf("Character: %c & number: %d\\n", 'H', 78001);
+_printf("Character: %c & Number: %d\\n", 'H', 78001);
 
 .SH SEE ALSO
 .I printf(3)
