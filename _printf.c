@@ -31,11 +31,6 @@ int print_type(const char *format, va_list list)
 		count = count + 1;
 		return (count);
 	}
-	if (str == '\0')
-	{
-		_putchar(0);
-		return (0);
-	}
 	j = 0;
 	while (v[j].t != NULL)
 	{
@@ -81,6 +76,10 @@ int _printf(const char *format, ...)
 		{
 			_putchar(format[i]);
 			len = len + 1;
+		}
+		else if  (format[i] == '%' && format[i + 1] == '\0')
+		{
+			return (-1);
 		}
 		else
 		{
