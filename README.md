@@ -47,4 +47,5 @@ Prints arguments to standard output according to a format string. The format str
 
 ## Authors
 [Luke Hackett](https://github.com/lhack-jpeg)
+
 [Hamish Ross](https://github.com/Gotmished)
