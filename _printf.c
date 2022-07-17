@@ -21,6 +21,7 @@ int print_type(const char *format, va_list list)
 		{"s", print_s},
 		{"d", conv_d},
 		{"i", conv_d},
+		{"b", print_b},
 		{NULL, NULL}
 	};
 	str = *(format + 1);
