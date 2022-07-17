@@ -57,7 +57,7 @@ int print_ld(long int n)
 
 int print_b(va_list list)
 {
-	long int number = va_arg(list, int);
+	long int number = va_arg(list,long int);
 
 	int count;
 	unsigned long bin = 0, rem, mult = 1;
