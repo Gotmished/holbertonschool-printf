@@ -59,7 +59,7 @@ int print_b(va_list list)
 {
 	long int number = va_arg(list,long int);
 
-	int count;
+	long int count;
 	unsigned long bin = 0, rem, mult = 1;
 
 	if (number < 0)
