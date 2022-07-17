@@ -21,4 +21,5 @@ char *_strcpy(char *dest, char *src);
 int print_s(va_list list);
 int print_d(int n);
 int conv_d(va_list list);
+int print_b(va_list list);
 #endif /* HOLBERTON_H */
